@@ -32,6 +32,14 @@ public class lesson01 {
         System.out.println(isNegativeNumber(9));
         System.out.println(isNegativeNumber(-9));
 
+        //7. Написать метод, которому в качестве параметра передается строка, обозначающая имя, метод должен вывести в консоль сообщение «Привет, указанное_имя!»;
+    name("Волосимир");
+
+    //8. * Написать метод, который определяет является ли год високосным, и выводит сообщение в консоль. Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й – високосный.
+        checkLeapYear(2024);
+        checkLeapYear(2021);
+        checkLeapYear(2000);
+        checkLeapYear(1900); //не является високосным годом
     }
 
     private static double calculateExpression(double a, double b, double c, double d) {
@@ -50,6 +58,16 @@ public class lesson01 {
     }
     public static boolean isNegativeNumber(int i) {
         return i < 0;
+    }
+    public static void name(String name) {
+        System.out.printf("Привет, %s!\n", name);
+    }
+    public static void checkLeapYear(int year) {
+        if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+            System.out.println(year + " - високосный год");
+        } else {
+            System.out.println(year + " - не високосный год");
+        }
     }
 }
 
