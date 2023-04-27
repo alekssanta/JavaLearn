@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class lesson01 {
     //1. Создать пустой проект в IntelliJ IDEA и прописать метод main();
     public static void main(String[] args) {
@@ -41,6 +43,11 @@ public class lesson01 {
         checkLeapYear(2000);
         checkLeapYear(1900); //не является високосным годом
         checkLeapYear(0); //null
+        //дз - 2
+        //1. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ]. С помощью цикла и условия заменить 0 на 1, 1 на 0;
+        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        invert(arr);
+        System.out.println(Arrays.toString(arr)); //Вывод: [0, 0, 1, 1, 0, 1, 0, 0, 1, 1]
     }
 
     private static double calculateExpression(double a, double b, double c, double d) {
@@ -68,6 +75,15 @@ public class lesson01 {
             System.out.println(year + " - високосный год");
         } else {
             System.out.println(year + " - не високосный год");
+        }
+    }
+    public static void invert(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                arr[i] = 1;
+            } else {
+                arr[i] = 0;
+            }
         }
     }
     }
