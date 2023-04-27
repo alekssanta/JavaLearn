@@ -40,7 +40,6 @@ public class lesson01 {
         checkLeapYear(2021);
         checkLeapYear(2000);
         checkLeapYear(1900); //не является високосным годом
-        checkLeapYear(0); //null
     }
 
     private static double calculateExpression(double a, double b, double c, double d) {
@@ -63,18 +62,14 @@ public class lesson01 {
     public static void name(String name) {
         System.out.printf("Привет, %s!\n", name);
     }
-    public static void checkLeapYear(Integer year) {
-        if (year == null) {
-            System.out.println("Не указан год");
-        }
-      else if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+    public static void checkLeapYear(int year) {
+        if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
             System.out.println(year + " - високосный год");
         } else {
             System.out.println(year + " - не високосный год");
         }
     }
-    }
-
+}
 
 
 
