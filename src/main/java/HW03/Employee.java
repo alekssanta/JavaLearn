@@ -1,7 +1,4 @@
-package lesson02;
-
-
-
+package HW03;
 
 
 public class Employee {
@@ -12,16 +9,30 @@ public class Employee {
     private int phone;
     private int salary;
     private int age;
+
     public Employee(String name, String position, String email, String phone, int salary, int age) {
         this.name = name;
         this.position = position;
         this.email = email;
         this.phone = Integer.parseInt(phone);
-        this.salary= salary;
+        this.salary = salary;
         this.age = age;
     }
-    public void printInfo() {
-        System.out.println("Name - "+name+", Position - "+position+", email - "+email+", phone - "+phone+", salary - "+salary+ ", age - "+age);
+
+
+    @Override
+    public String toString() {
+        return "task #3 - Employee - " +
+                "fullName='" + name + '\'' +
+                ", position='" + position + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", salary=" + salary +
+                ", age=" + age;
+    }
+
+    public int getAge() {
+        return age;
     }
 
     public static void main(String[] args) {
@@ -32,11 +43,17 @@ public class Employee {
         employees[3] = new Employee("Kimi Raikonnen", "Manager", "kimi@gmail.com", "1234567890", 50000, 45);
         employees[4] = new Employee("Charles Lecler", "Manager", "lecler@gmail.com", "1234567890", 500000, 26);
 
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i].age > 40) {
-                employees[i].printInfo();
+//        for (int i = 0; i < employees.length; i++) {
+//            if (employees[i].age > 40) {
+//                employees[i].toString();
+//            }
+//}
+
+        for (Employee e : employees) {
+            if (e.getAge() > 40) {
+                System.out.println(e);
             }
-}
+        }
     }
 }
 
