@@ -1,4 +1,8 @@
-public class lesson01 {
+package HW01;
+
+import java.util.Arrays;
+
+public class HW01 {
     //1. Создать пустой проект в IntelliJ IDEA и прописать метод main();
     public static void main(String[] args) {
 
@@ -15,12 +19,12 @@ public class lesson01 {
 
 //3. Написать метод вычисляющий выражение a * (b + (c / d)) и возвращающий результат,где a, b, c, d – входные параметры этого метода;
         int a = 2, b = 3, c = 4, d = 5;
-        System.out.println(calculateExpression(a, b, c, d)); // Выводит результат выражения
+        System.out.println("task #1.3 - "+calculateExpression(a, b, c, d)); // Выводит результат выражения
         //return aDouble;
 
        //4. Написать метод, принимающий на вход два числа, и проверяющий что их сумма лежит в пределах от 10 до 20(включительно), если да – вернуть true, в противном случае – false;
-        System.out.println(isSumInRange(9, 999));
-        System.out.println(isSumInRange(9, 9));
+        System.out.println("task #1.4 - "+isSumInRange(9, 999));
+        System.out.println("task #1.4 - "+isSumInRange(9, 9));
 
         //5. Написать метод, которому в качестве параметра передается целое число, метод должен напечатать в консоль положительное ли число передали, или отрицательное; Замечание: ноль считаем положительным числом.
         //System.out.println(checkNumber(0));
@@ -29,8 +33,8 @@ public class lesson01 {
         checkNumber(-9);
 
         //6. Написать метод, которому в качестве параметра передается целое число, метод должен вернуть true, если число отрицательное;
-        System.out.println(isNegativeNumber(9));
-        System.out.println(isNegativeNumber(-9));
+        System.out.println("task #1.6 - "+isNegativeNumber(9));
+        System.out.println("task #1.6 - "+isNegativeNumber(-9));
 
         //7. Написать метод, которому в качестве параметра передается строка, обозначающая имя, метод должен вывести в консоль сообщение «Привет, указанное_имя!»;
     name("Волосимир");
@@ -40,7 +44,12 @@ public class lesson01 {
         checkLeapYear(2021);
         checkLeapYear(2000);
         checkLeapYear(1900); //не является високосным годом
+        checkLeapYear(0); //null
+
     }
+
+
+
 
     private static double calculateExpression(double a, double b, double c, double d) {
         return a * (b + c / d);
@@ -51,25 +60,27 @@ public class lesson01 {
     }
     public static void checkNumber(int i) {
         if (i >= 0) {
-            System.out.println("Positive number");
+            System.out.println("task #1.5 - "+"Positive number");
         } else {
-            System.out.println("Negative number");
+            System.out.println("task #1.5 - "+"Negative number");
         }
     }
     public static boolean isNegativeNumber(int i) {
         return i < 0;
     }
     public static void name(String name) {
-        System.out.printf("Привет, %s!\n", name);
+        System.out.printf("task #1.7 - "+"Привет, %s!\n", name);
     }
     public static void checkLeapYear(int year) {
-        if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
-            System.out.println(year + " это високосный год");
+       if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+            System.out.println("task #1.8 - "+year + " - високосный год");
         } else {
-            System.out.println(year + " это не високосный год");
+            System.out.println("task #1.8 - "+year + " - не високосный год");
         }
     }
+
 }
+
 
 
 
